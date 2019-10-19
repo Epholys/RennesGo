@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccountComponent } from './account.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { User } from '../model/User';
+import { Network } from '../model/Network';
 
 describe('AccountComponent', () => {
   let component: AccountComponent;
@@ -8,7 +11,9 @@ describe('AccountComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccountComponent ]
+      declarations: [ AccountComponent ],
+      providers: [User, Network],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));
